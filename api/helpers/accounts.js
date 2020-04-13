@@ -1,4 +1,4 @@
-const db = require("../data/dbConfig.js");
+const db = require("../../data/dbConfig.js");
 
 const getAccounts = () => {
    return db.from("Accounts").select("*");
@@ -29,4 +29,11 @@ const overwriteAccount = (id, { name, budget }) => {
             throw "No changes were made. Account with that ID does not exist.";
          }
       });
+};
+
+module.exports = {
+   getAccounts,
+   getAccount,
+   addAccount,
+   overwriteAccount,
 };
